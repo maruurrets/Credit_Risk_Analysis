@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Risk Analysis</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='style/main_results.css') }}" />
+        
+</head>
+<body>
+    <div class="image-wrapper" >
+        <img alt="AnyoneAi logo" src="https://anyoneai.com/_next/image?url=%2Fimg%2Flogo_with_name.svg&w=256&q=75" decoding="async" data-nimg="intrinsic">
+    </div>
+    <h1>Credit Risk Analysis</h1>
+    <div class="result">
+        <div>
+            <h2>FORM RESULT:</h2>
+
+
+            {% if context['prediction'] == 1 %}
+                <!-- <img src="approved.jpg"> -->
+                <img src= "{{ url_for('static', filename ='images/not_approved.jpg') }}">
+            
+            {% elif context['prediction'] == 0 %}
+                <img src= "{{ url_for('static', filename ='images/approved.jpg') }}">
+            
+            {% endif %}
+    
+            <!-- <p><span class="{{ context['prediction'] }}">{{ context['prediction'] }}</span></p> -->
+            <p>Score: {{ context['probability'] }}</p>
+        </div>
+<body>
