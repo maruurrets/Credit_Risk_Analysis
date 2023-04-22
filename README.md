@@ -7,7 +7,7 @@ Its composed by three microservices, that are configured to be excecuted with a 
 - redis
 - ml_service
 
-![](./images_report/Microservices.PNG)
+![](./images_report/Microservices.jpg)
 
 ## Project structure 
 
